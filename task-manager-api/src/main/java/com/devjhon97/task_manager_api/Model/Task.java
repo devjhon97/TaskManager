@@ -1,17 +1,18 @@
 package com.devjhon97.task_manager_api.Model;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Column;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
 @Table(name = "Task")
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class Task {
 
     @Id
@@ -27,4 +28,7 @@ public class Task {
 
     @Column(name = "State", nullable = false)
     private boolean isCompleted;
+
+    public Task(String name, String description, boolean b) {
+    }
 }
