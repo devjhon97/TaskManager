@@ -1,29 +1,30 @@
 package com.devjhon97.task_manager_api.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
+@Table(name = "Task")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Task {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Getter
+    @Column(name = "Id", nullable = false)
     private Long id;
 
-    @Getter
-    @Setter
+    @Column(name = "Name", nullable = false)
     private String name;
 
-    @Getter
-    @Setter
+    @Column(name = "Description", nullable = false)
     private String description;
 
-    @Getter
-    @Setter
+    @Column(name = "State", nullable = false)
     private boolean isCompleted;
 }
