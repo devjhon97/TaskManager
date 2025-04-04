@@ -6,7 +6,4 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TaskController {
-
-    @Autowired
-    private TaskService taskService;
 }
